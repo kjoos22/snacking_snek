@@ -4,12 +4,6 @@ const ctx = canvas.getContext("2d")
 var dx = 12
 var dy = 0
 
-var leftPressed = false
-var upPressed = false
-var rightPressed = false
-var leftPressed = false
-
-
 document.addEventListener("keydown", changeDirection)
 
 //snake color "#FF6600"
