@@ -59,10 +59,23 @@ function changeDirection(e) {
         dy = 12
     }
 }
+
+function gameOver() {
+    let head = snake[snake.length - 1]
+    for (let i = snake.length - 2; i >= 0; i--) {
+        if (snake[i].x == head.x && 
+            snake[i].y == head.y) {
+            return true
+        }
+        
+    }
+    return false
+}
  
 function runGame() {
     moveSnake()
     //debugger
+    
 }
 
 
