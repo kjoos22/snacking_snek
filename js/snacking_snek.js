@@ -3,10 +3,6 @@ const ctx = canvas.getContext("2d")
 
 var dx = 12
 var dy = 0
-const movingUp = dy === -12;
-const movingDown = dy === 12;
-const movingRight = dx === 12;  
-const movingLeft = dx === -12;
 
 var leftPressed = false
 var upPressed = false
@@ -40,7 +36,7 @@ function drawSnakeSegment(segment) {
 function moveSnake() {
     let head = {
                  x: snake[snake.length-1].x + dx,
-                 y:snake[snake.length-1].y + dy
+                 y: snake[snake.length-1].y + dy
             }
     snake.push(head)
     snake.shift()
@@ -48,13 +44,25 @@ function moveSnake() {
 }
 
 function changeDirection(e) {
+    const movingUp = dy === -12;
+    const movingDown = dy === 12;
+    const movingRight = dx === 12;  
+    const movingLeft = dx === -12;
     if(e.key == "ArrowLeft" && !movingRight) {
-        dx = -10
+        dx = -12
         dy = 0
     }
     if(e.key == "ArrowUp" && !movingDown) {
-        dx = -10
+        dx = 0
+        dy = -12
+    }
+    if(e.key == "ArrowRight" && !movingLeft) {
+        dx = 12
         dy = 0
+    }
+    if(e.key == "ArrowDown" && !movingUp) {
+        dx = 0
+        dy = 12
     }
 }
  
