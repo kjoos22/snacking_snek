@@ -63,11 +63,11 @@ function changeDirection(e) {
 function gameOver() {
     let head = snake[snake.length - 1]
     for (let i = snake.length - 2; i >= 0; i--) {
-        if (snake[i].x == head.x && 
-            snake[i].y == head.y) {
-            return true
-        }
-        
+        if (snake[i].x == head.x && snake[i].y == head.y) {return true}
+        if (head.x < 0) {return true}
+        if (head.x > canvas.width - 12) {return true}
+        if (head.y < 0) {return true}
+        if (head.y > canvas.height - 12) {return true}        
     }
     return false
 }
