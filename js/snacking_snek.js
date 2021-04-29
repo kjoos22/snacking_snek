@@ -83,9 +83,6 @@ function eatFood() {
             console.log("FOOD EATEN")
         }
     }
-    //if (head.x == food.x && head.y == food.y) {
-        //console.log("FOOD EATEN")
-    //}
     
 }
 
