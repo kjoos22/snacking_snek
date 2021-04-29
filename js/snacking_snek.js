@@ -15,6 +15,8 @@ let snake = [
             {x: 48, y: 294}
         ]
 
+let food = {x: 0, y: 0}
+
 function drawSnake() {
     ctx.clearRect(0, 0, canvas.width, canvas.height)
     snake.forEach(drawSnakeSegment)
@@ -60,6 +62,32 @@ function changeDirection(e) {
     }
 }
 
+function makeFood() {
+    food.x = Math.floor(Math.random() * 901)
+    food.y = Math.floor(Math.random() * 601)
+    
+}
+
+function drawFood() {
+    ctx.beginPath()
+    ctx.arc(food.x, food.y, 6, 0, Math.PI*2)
+    ctx.fillStyle = "#99bbff"
+    ctx.fill()
+    ctx.closePath()
+}
+
+function eatFood() {
+    let head = snake[snake.length - 1]
+    for (i = 0; i < 12; i++) {
+        if (head.x + i == food.x && head.y + i == food.y) {
+            console.log("FOOD EATEN")
+        }
+    }
+    //if (head.x == food.x - 6 && head.y == food.y - 6) {
+        //console.log("FOOD EATEN")
+    //}
+}
+
 function gameOver() {
     let head = snake[snake.length - 1]
     for (let i = snake.length - 2; i >= 0; i--) {
@@ -74,11 +102,18 @@ function gameOver() {
  
 function runGame() {
     moveSnake()
+    drawFood()
+    eatFood()
     //debugger
-    
+    if (gameOver()) {
+        clearInterval(game)
+        console.log("Game Over")
+        alert("GAME OVER")
+    }
 }
 
 
 
 drawSnake()
-setInterval(runGame, 60)
+makeFood()
+var game = setInterval(runGame, 60)
