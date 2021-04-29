@@ -78,14 +78,15 @@ function drawFood() {
 
 function eatFood() {
     let head = snake[snake.length - 1]
-    for (i = 0; i < 12; i++) {
-        if (head.x + i == food.x && head.y + i == food.y) {
+    if (head.x >= food.x - 6 && head.x <= food.x + 6) {
+        if (head.y + 6 >= food.y - 6 && head.y + 6 <= food.y + 6) {
             console.log("FOOD EATEN")
         }
     }
-    //if (head.x == food.x - 6 && head.y == food.y - 6) {
+    //if (head.x == food.x && head.y == food.y) {
         //console.log("FOOD EATEN")
     //}
+    
 }
 
 function gameOver() {
@@ -107,7 +108,6 @@ function runGame() {
     //debugger
     if (gameOver()) {
         clearInterval(game)
-        console.log("Game Over")
         alert("GAME OVER")
     }
 }
