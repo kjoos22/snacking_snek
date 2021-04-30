@@ -88,8 +88,10 @@ function eatFood() {
             if (head.y >= food.y - 6 && head.y <= food.y + 6) {
                 score += 10
                 scoreText.innerText = `CURRENT SCORE: ${score}`
+                makeFood()
             }else if (head.y + 12 >= food.y - 6 && head.y + 12 <= food.y + 6) {
                 scoreText.innerText = `CURRENT SCORE: ${score}`
+                makeFood()
             }
         }
     }
@@ -98,8 +100,10 @@ function eatFood() {
             if (head.x >= food.x - 6 && head.x <= food.x + 6) {
                 score += 10
                 scoreText.innerText = `CURRENT SCORE: ${score}`
+                makeFood()
             }else if (head.x + 12 >= food.x - 6 && head.x + 12 <= food.x + 6) {
                 scoreText.innerText = `CURRENT SCORE: ${score}`
+                makeFood()
             }
         }
     }
