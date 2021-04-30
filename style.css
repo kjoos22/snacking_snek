@@ -1,11 +1,19 @@
 #scoreContainer {
-    height: 50px;
-    width: 100px;
+    height: 40px;
+    width: 450px;
     background-color: #000000;
+}
+
+#scoreText {
+    padding-top: 12px;
+    padding-left: 5px;
+    color: #ffffff;
 }
 
 #gameCanvas {
     background: #1f913b;
     border: #0d3f1a;
     display: block;
+    width: 900px;
+    height: 600px;
 }
