@@ -2,10 +2,12 @@ const canvas = document.getElementById("gameCanvas")
 let scoreText = document.getElementById("scoreText")
 const ctx = canvas.getContext("2d")
 
-var dx = 12
-var dy = 0
+let dx = 12
+let dy = 0
+let game
 
 document.addEventListener("keydown", changeDirection)
+
 
 //snake color "#FF6600"
 let snake = [
@@ -44,6 +46,7 @@ function moveSnake() {
     }
     drawSnake()
 }
+
 
 function changeDirection(e) {
     const movingUp = dy === -12;
@@ -96,8 +99,8 @@ function eatFood() {
                 makeFood()
                 foodEaten = true
             }else if (head.y + 12 >= food.y - 6 && head.y + 12 <= food.y + 6) {
-                scoreText.innerText = `CURRENT SCORE: ${score}`
                 score += 10
+                scoreText.innerText = `CURRENT SCORE: ${score}`                
                 makeFood()
                 foodEaten = true
             }
@@ -152,4 +155,4 @@ function runGame() {
 
 drawSnake()
 makeFood()
-var game = setInterval(runGame, 60)
+game = setInterval(runGame, 60)
