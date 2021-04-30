@@ -17,6 +17,7 @@ let snake = [
         ]
 let food = {x: 0, y: 0}
 let score = 0
+let foodEaten = false
 
 function drawSnake() {
     ctx.clearRect(0, 0, canvas.width, canvas.height)
@@ -36,7 +37,11 @@ function moveSnake() {
                  y: snake[snake.length-1].y + dy
             }
     snake.push(head)
-    snake.shift()
+    if (!foodEaten) {
+        snake.shift()
+    }else{
+        foodEaten = false
+    }
     drawSnake()
 }
 
@@ -89,9 +94,12 @@ function eatFood() {
                 score += 10
                 scoreText.innerText = `CURRENT SCORE: ${score}`
                 makeFood()
+                foodEaten = true
             }else if (head.y + 12 >= food.y - 6 && head.y + 12 <= food.y + 6) {
                 scoreText.innerText = `CURRENT SCORE: ${score}`
+                score += 10
                 makeFood()
+                foodEaten = true
             }
         }
     }
@@ -101,9 +109,12 @@ function eatFood() {
                 score += 10
                 scoreText.innerText = `CURRENT SCORE: ${score}`
                 makeFood()
+                foodEaten = true
             }else if (head.x + 12 >= food.x - 6 && head.x + 12 <= food.x + 6) {
+                score += 10
                 scoreText.innerText = `CURRENT SCORE: ${score}`
                 makeFood()
+                foodEaten = true
             }
         }
     }
