@@ -15,7 +15,7 @@ let snake = [
             {x: 36, y: 294},
             {x: 48, y: 294}
         ]
-let food = {x: 0, y: 0}
+let food = {}
 let score = 0
 let foodEaten = false
 
@@ -69,8 +69,8 @@ function changeDirection(e) {
 }
 
 function makeFood() {
-    food.x = Math.floor(Math.random() * 901)
-    food.y = Math.floor(Math.random() * 601)
+    food.x = Math.floor(Math.random() * 895) + 6
+    food.y = Math.floor(Math.random() * 595) + 6
     
 }
 
@@ -140,7 +140,11 @@ function runGame() {
     //debugger
     if (gameOver()) {
         clearInterval(game)
-        alert("GAME OVER")
+        ctx.fillStyle = "#808080"
+        ctx.fillRect(0, 0, canvas.width, canvas.height)        
+        ctx.font = "bold 75px sans-serif"
+        ctx.fillStyle = "#000000"
+        ctx.fillText("GAME OVER", 210, 320)
     }
 }
 
