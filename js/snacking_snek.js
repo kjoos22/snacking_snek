@@ -1,4 +1,5 @@
 const canvas = document.getElementById("gameCanvas")
+let scoreText = document.getElementById("scoreText")
 const ctx = canvas.getContext("2d")
 
 var dx = 12
@@ -14,8 +15,8 @@ let snake = [
             {x: 36, y: 294},
             {x: 48, y: 294}
         ]
-
 let food = {x: 0, y: 0}
+let score = 0
 
 function drawSnake() {
     ctx.clearRect(0, 0, canvas.width, canvas.height)
@@ -78,11 +79,28 @@ function drawFood() {
 
 function eatFood() {
     let head = snake[snake.length - 1]
-    if (head.x >= food.x - 6 && head.x <= food.x + 6) {
+    const movingUp = dy === -12;
+    const movingDown = dy === 12;
+    const movingRight = dx === 12;  
+    const movingLeft = dx === -12;
+    if (movingRight || movingLeft){
+        if (head.x >= food.x - 6 && head.x <= food.x + 6) {
+            if (head.y >= food.y - 6 && head.y <= food.y + 6) {
+                score += 10
+                scoreText.innerText = `CURRENT SCORE: ${score}`
+            }else if (head.y + 12 >= food.y - 6 && head.y + 12 <= food.y + 6) {
+                scoreText.innerText = `CURRENT SCORE: ${score}`
+            }
+        }
+    }
+    if (movingUp || movingDown){
         if (head.y >= food.y - 6 && head.y <= food.y + 6) {
-            console.log("FOOD EATEN")
-        }else if (head.y + 12 >= food.y - 6 && head.y + 12 <= food.y + 6) {
-            console.log("FOOD EATEN2")
+            if (head.x >= food.x - 6 && head.x <= food.x + 6) {
+                score += 10
+                scoreText.innerText = `CURRENT SCORE: ${score}`
+            }else if (head.x + 12 >= food.x - 6 && head.x + 12 <= food.x + 6) {
+                scoreText.innerText = `CURRENT SCORE: ${score}`
+            }
         }
     }
     
