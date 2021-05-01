@@ -4,10 +4,9 @@ const ctx = canvas.getContext("2d")
 
 let dx = 12
 let dy = 0
-let game
+
 
 document.addEventListener("keydown", changeDirection)
-
 
 //snake color "#FF6600"
 let snake = [
