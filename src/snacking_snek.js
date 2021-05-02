@@ -1,37 +1,43 @@
 class SnackingSnek {
 
-    static canvas = document.getElementById("gameCanvas")
-    static scoreText = document.getElementById("scoreText")
-    static ctx = canvas.getContext("2d")
+    constructor() {
+        this.canvas = document.getElementById("gameCanvas")
+        this.scoreText = document.getElementById("scoreText")
+        this.ctx = this.canvas.getContext("2d")
 
-    static dx = 12
-    static dy = 0
+        this.dx = 12
+        this.dy = 0
 
-    //snake color "#FF6600"
-    static snake = [
-                {x: 0, y: 294},
-                {x: 12, y: 294},
-                {x: 24, y: 294},  
-                {x: 36, y: 294},
-                {x: 48, y: 294}
-            ]
-    static food = {}
-    static score = 0
-    static foodEaten = false
-    static gameplay
+        //snake color "#FF6600"
+        this.snake = [
+                    {x: 0, y: 294},
+                    {x: 12, y: 294},
+                    {x: 24, y: 294},  
+                    {x: 36, y: 294},
+                    {x: 48, y: 294}
+                ]
+        this.food = {}
+        this.score = 0
+        this.foodEaten = false
+        this.gameplay
+    }
 
     addListeners() {
         this.addEventListener("keydown", changeDirection)
     }
 
     drawSnake() {
-        ctx.clearRect(0, 0, canvas.width, canvas.height)
-        snake.forEach(drawSnakeSegment)
+        this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height)
+        this.snake.forEach(segment => {
+            this.ctx.fillStyle = "#FF6600"
+            this.ctx.fillRect(segment.x, segment.y, 12, 12)
+        })
     }
 
     drawSnakeSegment(segment) {
-        ctx.fillStyle = "#FF6600"
-        ctx.fillRect(segment.x, segment.y, 12, 12)
+        debugger
+        this.ctx.fillStyle = "#FF6600"
+        this.ctx.fillRect(segment.x, segment.y, 12, 12)
     }
 
     //clear canvas method? current first statement of drawSnake()

@@ -1,1 +1,2 @@
-game = SnackingSnek.new
+const game =  new SnackingSnek()
+game.drawSnake()
