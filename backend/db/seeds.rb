@@ -12,3 +12,7 @@ Player.create([
                 {name: "Medium Lance"}, 
                 {name: "Little Lance"}
             ])
+
+Game.create([
+                {score: 100, difficulty: "Easy", player_id: 1}
+            ])
