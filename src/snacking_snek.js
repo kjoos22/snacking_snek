@@ -81,8 +81,8 @@ class SnackingSnek {
     }
 
     makeFood() {
-        this.food.x = Math.floor(Math.random() * 895) + 6
-        this.food.y = Math.floor(Math.random() * 595) + 6
+        this.food.x = Math.floor(Math.random() * 890) + 6
+        this.food.y = Math.floor(Math.random() * 590) + 6
     }
 
     drawFood() {
@@ -106,7 +106,8 @@ class SnackingSnek {
                     this.scoreText.innerText = `CURRENT SCORE: ${this.score}`
                     this.makeFood()
                     this.foodEaten = true
-                }else if (head.y + 12 >= this.food.y - 6 && head.y + 12 <= this.food.y + 6) {
+                }else if(head.y + 12 >= this.food.y - 6 && 
+                        head.y + 12 <= this.food.y + 6) {
                     this.score += 10
                     this.scoreText.innerText = `CURRENT SCORE: ${this.score}`                
                     this.makeFood()
@@ -121,7 +122,8 @@ class SnackingSnek {
                     this.scoreText.innerText = `CURRENT SCORE: ${this.score}`
                     this.makeFood()
                     this.foodEaten = true
-                }else if (head.x + 12 >= this.food.x - 6 && head.x + 12 <= this.food.x + 6) {
+                }else if(head.x + 12 >= this.food.x - 6 && 
+                        head.x + 12 <= this.food.x + 6) {
                     this.score += 10
                     this.scoreText.innerText = `CURRENT SCORE: ${this.score}`
                     this.makeFood()
@@ -135,7 +137,9 @@ class SnackingSnek {
     gameOver() {
         let head = this.snake[this.snake.length - 1]
         for (let i = this.snake.length - 2; i >= 0; i--) {
-            if (this.snake[i].x == head.x && this.snake[i].y == head.y) {return true}
+            if (this.snake[i].x == head.x && this.snake[i].y == head.y) {
+                return true
+            }
             if (head.x < 0) {return true}
             if (head.x > this.canvas.width - 12) {return true}
             if (head.y < 0) {return true}
