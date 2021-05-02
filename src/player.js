@@ -1,5 +1,4 @@
 class Player {
-    static all = []
     //static playerList = document.getElementById("playerDropdown")
 
     constructor ({id, name}) {
