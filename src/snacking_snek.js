@@ -23,7 +23,7 @@ class SnackingSnek {
     }
 
     addListeners() {
-        this.addEventListener("keydown", changeDirection)
+        document.addEventListener("keydown", this.changeDirection)
     }
 
     drawSnake() {
@@ -58,25 +58,25 @@ class SnackingSnek {
 
 
     changeDirection(e) {
-        const movingUp = dy === -12;
-        const movingDown = dy === 12;
-        const movingRight = dx === 12;  
-        const movingLeft = dx === -12;
+        const movingUp = this.dy === -12;
+        const movingDown = this.dy === 12;
+        const movingRight = this.dx === 12;  
+        const movingLeft = this.dx === -12;
         if(e.key == "ArrowLeft" && !movingRight) {
-            dx = -12
-            dy = 0
+            game.dx = -12
+            game.dy = 0
         }
         if(e.key == "ArrowUp" && !movingDown) {
-            dx = 0
-            dy = -12
+            game.dx = 0
+            game.dy = -12
         }
         if(e.key == "ArrowRight" && !movingLeft) {
-            dx = 12
-            dy = 0
+            game.dx = 12
+            game.dy = 0
         }
         if(e.key == "ArrowDown" && !movingUp) {
-            dx = 0
-            dy = 12
+            game.dx = 0
+            game.dy = 12
         }
     }
 
@@ -145,17 +145,16 @@ class SnackingSnek {
     }
     
     runGame() {
-        this.moveSnake()
-        this.drawFood()
-        this.eatFood()
-        //debugger
-        if (this.gameOver()) {
-            clearInterval(gameplay)
-            ctx.fillStyle = "#808080"
-            ctx.fillRect(0, 0, canvas.width, canvas.height)        
-            ctx.font = "bold 75px sans-serif"
-            ctx.fillStyle = "#000000"
-            ctx.fillText("GAME OVER", 210, 320)
+        game.moveSnake()
+        game.drawFood()
+        game.eatFood()
+        if (game.gameOver()) {
+            clearInterval(game.gameplay)
+            game.ctx.fillStyle = "#808080"
+            game.ctx.fillRect(0, 0, game.canvas.width, game.canvas.height)        
+            game.ctx.font = "bold 75px sans-serif"
+            game.ctx.fillStyle = "#000000"
+            game.ctx.fillText("GAME OVER", 210, 320)
         }
     }
 
