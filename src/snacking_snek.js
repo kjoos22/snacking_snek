@@ -34,11 +34,11 @@ class SnackingSnek {
         })
     }
 
-    drawSnakeSegment(segment) {
-        debugger
-        this.ctx.fillStyle = "#FF6600"
-        this.ctx.fillRect(segment.x, segment.y, 12, 12)
-    }
+    // drawSnakeSegment(segment) {
+    //     debugger
+    //     this.ctx.fillStyle = "#FF6600"
+    //     this.ctx.fillRect(segment.x, segment.y, 12, 12)
+    // }
 
     //clear canvas method? current first statement of drawSnake()
 
@@ -81,9 +81,8 @@ class SnackingSnek {
     }
 
     makeFood() {
-        food.x = Math.floor(Math.random() * 895) + 6
-        food.y = Math.floor(Math.random() * 595) + 6
-        
+        this.food.x = Math.floor(Math.random() * 895) + 6
+        this.food.y = Math.floor(Math.random() * 595) + 6
     }
 
     drawFood() {
