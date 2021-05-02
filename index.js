@@ -15,5 +15,6 @@ PlayerApi.allPlayers()
 game.drawSnake()
 game.makeFood()
 game.addListeners()
+game.disableDropdowns()
 game.gameplay = setInterval(game.runGame, 60)
 

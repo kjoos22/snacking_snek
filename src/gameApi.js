@@ -21,7 +21,6 @@ class GameApi {
         .then(resp => resp.json())
         .then(data => {
             const newGame = data.data
-            debugger
             const g = new Game(newGame.attributes)
         })
     }
