@@ -53,27 +53,32 @@
 }
 
 #hardScoreContainer {
-    height: 275px;
+    height: 240px;
     width: 225px;
     background-color: #000000;
 }
 
 #mediumScoreContainer {
-    height: 275px;
+    height: 240px;
     width: 225px;
     background-color: #000000;
 }
 
 #easyScoreContainer {
-    height: 275px;
+    height: 240px;
     width: 225px;
     background-color: #000000;
 }
 
 #playerScoreContainer {
-    height: 275px;
+    height: 240px;
     width: 225px;
     background-color: #000000;
+}
+
+.highScoreHeader {
+    padding-left: 5px;
+    color: #ffffff;
 }
 
 
