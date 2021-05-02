@@ -7,8 +7,8 @@ class PlayerApi {
         .then(resp => resp.json())
         .then(json => {
             json["data"].forEach(p => {
-                const player = new Player({id: p.id, name: p.name})
-                player.addToPlayerDropdown
+                const player = new Player({id: p.id, name: p.attributes.name})
+                player.addToPlayerDropdown()
             })
         })
     }
