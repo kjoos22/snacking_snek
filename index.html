@@ -20,7 +20,14 @@
         </form>
     </div>
     <div id="difficultyContainer">
-        <p id="difficultyText">CURRENT DIFFICULTY: </p>
+        <form id="selectDifficultyForm">
+            <label for="difficultyDropdown">DIFFICULTY: </label>
+            <select id="difficultyDropdown">
+                <option value="Easy">Easy</option>
+                <option value="Medium">Medium</option>
+                <option value="Hard">Hard</option>
+            </select>
+        </form>
     </div>
 </div>
 <br>
@@ -45,6 +52,9 @@
     </div>
 </div>
 
+
+<script src="src/game.js" charset="utf-8"></script>
+<script src="src/gameApi.js" charset="utf-8"></script>
 <script src="src/player.js" charset="utf-8"></script>
 <script src="src/playerApi.js" charset="utf-8"></script>
 <script src="src/snackingSnek.js" charset="utf-8"></script>

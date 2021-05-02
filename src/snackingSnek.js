@@ -153,6 +153,7 @@ class SnackingSnek {
         game.drawFood()
         game.eatFood()
         if (game.gameOver()) {
+            GameApi.createGame()
             clearInterval(game.gameplay)
             game.ctx.fillStyle = "#808080"
             game.ctx.fillRect(0, 0, game.canvas.width, game.canvas.height)        
