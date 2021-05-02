@@ -13,7 +13,7 @@
         <p id="scoreText">CURRENT SCORE: 0</p>
     </div>
     <div id="playerContainer">
-        <form id="playerForm">
+        <form id="selectPlayerForm">
             <label for="playerDropdown">PLAYER: </label>
             <select id="playerDropdown">
             </select>
@@ -23,6 +23,12 @@
         <p id="difficultyText">CURRENT DIFFICULTY: </p>
     </div>
 </div>
+<br>
+<form id="newPlayerForm">
+    <label for="newPlayer">NEW PLAYER: </label>
+    <input type = "text" id="newPlayer"></input>
+    <input type="submit" value="Create Player">
+</form>
 
 <script src="src/player.js" charset="utf-8"></script>
 <script src="src/playerApi.js" charset="utf-8"></script>
