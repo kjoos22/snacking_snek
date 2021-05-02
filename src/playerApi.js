@@ -5,6 +5,11 @@ class PlayerApi {
     static allPlayers = () => {
         fetch(this.baseUrl)
         .then(resp => resp.json())
-        .then(data => console.log(data))
+        .then(json => {
+            json["data"].forEach(p => {
+                const player = new Player({id: p.id, name: p.name})
+                player.addToPlayerDropdown
+            })
+        })
     }
 }
