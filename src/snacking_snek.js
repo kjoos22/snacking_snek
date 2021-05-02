@@ -58,10 +58,10 @@ class SnackingSnek {
 
 
     changeDirection(e) {
-        const movingUp = this.dy === -12;
-        const movingDown = this.dy === 12;
-        const movingRight = this.dx === 12;  
-        const movingLeft = this.dx === -12;
+        const movingUp = game.dy === -12;
+        const movingDown = game.dy === 12;
+        const movingRight = game.dx === 12;  
+        const movingLeft = game.dx === -12;
         if(e.key == "ArrowLeft" && !movingRight) {
             game.dx = -12
             game.dy = 0
