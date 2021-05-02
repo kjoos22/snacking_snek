@@ -49,8 +49,32 @@
 }
 
 #highScoreContainer {
-    height: 100px;
-    width: 300px;
+    display: flex
+}
+
+#hardScoreContainer {
+    height: 275px;
+    width: 225px;
     background-color: #000000;
 }
+
+#mediumScoreContainer {
+    height: 275px;
+    width: 225px;
+    background-color: #000000;
+}
+
+#easyScoreContainer {
+    height: 275px;
+    width: 225px;
+    background-color: #000000;
+}
+
+#playerScoreContainer {
+    height: 275px;
+    width: 225px;
+    background-color: #000000;
+}
+
+
 
