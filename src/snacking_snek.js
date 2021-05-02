@@ -44,16 +44,16 @@ class SnackingSnek {
 
     moveSnake() {
         let head = {
-                    x: snake[snake.length-1].x + dx,
-                    y: snake[snake.length-1].y + dy
+                    x: this.snake[this.snake.length-1].x + this.dx,
+                    y: this.snake[this.snake.length-1].y + this.dy
                 }
-        snake.push(head)
-        if (!foodEaten) {
-            snake.shift()
+        this.snake.push(head)
+        if (!this.foodEaten) {
+            this.snake.shift()
         }else{
-            foodEaten = false
+            this.foodEaten = false
         }
-        drawSnake()
+        this.drawSnake()
     }
 
 
@@ -86,46 +86,46 @@ class SnackingSnek {
     }
 
     drawFood() {
-        ctx.beginPath()
-        ctx.arc(food.x, food.y, 6, 0, Math.PI*2)
-        ctx.fillStyle = "#99bbff"
-        ctx.fill()
-        ctx.closePath()
+        this.ctx.beginPath()
+        this.ctx.arc(this.food.x, this.food.y, 6, 0, Math.PI*2)
+        this.ctx.fillStyle = "#99bbff"
+        this.ctx.fill()
+        this.ctx.closePath()
     }
 
     eatFood() {
-        let head = snake[snake.length - 1]
-        const movingUp = dy === -12;
-        const movingDown = dy === 12;
-        const movingRight = dx === 12;  
-        const movingLeft = dx === -12;
+        let head = this.snake[this.snake.length - 1]
+        const movingUp = this.dy === -12;
+        const movingDown = this.dy === 12;
+        const movingRight = this.dx === 12;  
+        const movingLeft = this.dx === -12;
         if (movingRight || movingLeft){
-            if (head.x >= food.x - 6 && head.x <= food.x + 6) {
-                if (head.y >= food.y - 6 && head.y <= food.y + 6) {
-                    score += 10
-                    scoreText.innerText = `CURRENT SCORE: ${score}`
-                    makeFood()
-                    foodEaten = true
-                }else if (head.y + 12 >= food.y - 6 && head.y + 12 <= food.y + 6) {
-                    score += 10
-                    scoreText.innerText = `CURRENT SCORE: ${score}`                
-                    makeFood()
-                    foodEaten = true
+            if (head.x >= this.food.x - 6 && head.x <= this.food.x + 6) {
+                if (head.y >= this.food.y - 6 && head.y <= this.food.y + 6) {
+                    this.score += 10
+                    this.scoreText.innerText = `CURRENT SCORE: ${this.score}`
+                    this.makeFood()
+                    this.foodEaten = true
+                }else if (head.y + 12 >= this.food.y - 6 && head.y + 12 <= this.food.y + 6) {
+                    this.score += 10
+                    this.scoreText.innerText = `CURRENT SCORE: ${this.score}`                
+                    this.makeFood()
+                    this.foodEaten = true
                 }
             }
         }
         if (movingUp || movingDown){
-            if (head.y >= food.y - 6 && head.y <= food.y + 6) {
-                if (head.x >= food.x - 6 && head.x <= food.x + 6) {
-                    score += 10
-                    scoreText.innerText = `CURRENT SCORE: ${score}`
-                    makeFood()
-                    foodEaten = true
-                }else if (head.x + 12 >= food.x - 6 && head.x + 12 <= food.x + 6) {
-                    score += 10
-                    scoreText.innerText = `CURRENT SCORE: ${score}`
-                    makeFood()
-                    foodEaten = true
+            if (head.y >= this.food.y - 6 && head.y <= this.food.y + 6) {
+                if (head.x >= this.food.x - 6 && head.x <= this.food.x + 6) {
+                    this.score += 10
+                    this.scoreText.innerText = `CURRENT SCORE: ${this.score}`
+                    this.makeFood()
+                    this.foodEaten = true
+                }else if (head.x + 12 >= this.food.x - 6 && head.x + 12 <= this.food.x + 6) {
+                    this.score += 10
+                    this.scoreText.innerText = `CURRENT SCORE: ${this.score}`
+                    this.makeFood()
+                    this.foodEaten = true
                 }
             }
         }
@@ -133,23 +133,23 @@ class SnackingSnek {
     }
 
     gameOver() {
-        let head = snake[snake.length - 1]
-        for (let i = snake.length - 2; i >= 0; i--) {
-            if (snake[i].x == head.x && snake[i].y == head.y) {return true}
+        let head = this.snake[this.snake.length - 1]
+        for (let i = this.snake.length - 2; i >= 0; i--) {
+            if (this.snake[i].x == head.x && this.snake[i].y == head.y) {return true}
             if (head.x < 0) {return true}
-            if (head.x > canvas.width - 12) {return true}
+            if (head.x > this.canvas.width - 12) {return true}
             if (head.y < 0) {return true}
-            if (head.y > canvas.height - 12) {return true}        
+            if (head.y > this.canvas.height - 12) {return true}        
         }
         return false
     }
     
     runGame() {
-        moveSnake()
-        drawFood()
-        eatFood()
+        this.moveSnake()
+        this.drawFood()
+        this.eatFood()
         //debugger
-        if (gameOver()) {
+        if (this.gameOver()) {
             clearInterval(gameplay)
             ctx.fillStyle = "#808080"
             ctx.fillRect(0, 0, canvas.width, canvas.height)        
