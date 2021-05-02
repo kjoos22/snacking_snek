@@ -7,6 +7,7 @@ class SnackingSnek {
 
         this.dx = 12
         this.dy = 0
+        this.running = false
 
         //snake color "#FF6600"
         this.snake = [
@@ -149,10 +150,12 @@ class SnackingSnek {
     }
     
     runGame() {
+        game.running = true
         game.moveSnake()
         game.drawFood()
         game.eatFood()
         if (game.gameOver()) {
+            game.running = false
             GameApi.createGame()
             clearInterval(game.gameplay)
             game.ctx.fillStyle = "#808080"

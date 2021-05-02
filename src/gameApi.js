@@ -20,10 +20,9 @@ class GameApi {
         fetch(this.baseUrl, configObj)
         .then(resp => resp.json())
         .then(data => {
-            const game = data.data
+            const newGame = data.data
             debugger
-            const g = new Game(game.attributes)
-            console.log(g)
+            const g = new Game(newGame.attributes)
         })
     }
 
