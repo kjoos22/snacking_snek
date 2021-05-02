@@ -18,6 +18,7 @@ class SnackingSnek {
     static food = {}
     static score = 0
     static foodEaten = false
+    static gameplay
 
     addListeners() {
         this.addEventListener("keydown", changeDirection)
@@ -144,7 +145,7 @@ class SnackingSnek {
         eatFood()
         //debugger
         if (gameOver()) {
-            clearInterval(game)
+            clearInterval(gameplay)
             ctx.fillStyle = "#808080"
             ctx.fillRect(0, 0, canvas.width, canvas.height)        
             ctx.font = "bold 75px sans-serif"
@@ -155,8 +156,8 @@ class SnackingSnek {
 
 
 
-    drawSnake()
-    makeFood()
-    game = setInterval(runGame, 60)
+    // drawSnake()
+    // makeFood()
+    // game = setInterval(runGame, 60)
 
 }
