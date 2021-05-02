@@ -22,7 +22,6 @@
 }
 
 #playerContainer {
-    display: flex;
     height: 48px;
     width: 300px;
     background-color: #000000;
@@ -47,5 +46,11 @@
 #difficultyText {
     padding-left: 5px;
     color: #ffffff;
+}
+
+#highScoreContainer {
+    height: 100px;
+    width: 300px;
+    background-color: #000000;
 }
 
