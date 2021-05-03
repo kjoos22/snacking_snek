@@ -6,7 +6,7 @@
     height: 600px;
 }
 
-#scoreAndPlayerContainer {
+#scoreAndGameplayContainer {
     display: flex
 }
 
@@ -45,6 +45,17 @@
     width: 75px;
 }
 
+#newPlayerContainer {
+    height: 48px;
+    width: 900px;
+    background-color: #000000;
+}
+
+#newPlayerForm {
+    padding-left: 250px;
+    padding-top: 16px;
+    color: #ffffff;
+}
 
 #highScoreContainer {
     display: flex

@@ -8,7 +8,7 @@
 <body>    
 <canvas id="gameCanvas" width="900" height="600"></canvas>
 
-<div id="scoreAndPlayerContainer">
+<div id="scoreAndGameplayContainer">
     <div id="scoreContainer">
         <p id="scoreText">CURRENT SCORE: 0</p>
     </div>
@@ -27,14 +27,14 @@
             <input type="submit" value="Start Game">
         </form>
     </div>
+</div>  
+<div id="newPlayerContainer">
+    <form id="newPlayerForm">
+        <label for="newPlayer">NEW PLAYER: </label>
+        <input type = "text" id="newPlayer"></input>
+        <input type="submit" value="Create Player">
+    </form>
 </div>
-<br>
-<form id="newPlayerForm">
-    <label for="newPlayer">NEW PLAYER: </label>
-    <input type = "text" id="newPlayer"></input>
-    <input type="submit" value="Create Player">
-</form>
-<br>
 <div id="highScoreContainer">
     <div id="hardScoreContainer">
         <p class="highScoreHeader">HARD HIGH SCORES:</p>
