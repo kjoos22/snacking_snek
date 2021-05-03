@@ -31,12 +31,16 @@ class SnackingSnek {
         document.getElementById("playerDropdown").hidden=true
         document.getElementById("difficultyDropdown").hidden=true
         document.getElementById("startGameButton").hidden=true
+        document.getElementById("playerDropdownLabel").hidden=true
+        document.getElementById("difficultyDropdownLabel").hidden=true
     }
 
     unhideDropdowns() {
         document.getElementById("playerDropdown").hidden=false
         document.getElementById("difficultyDropdown").hidden=false
         document.getElementById("startGameButton").hidden=false
+        document.getElementById("playerDropdownLabel").hidden=false
+        document.getElementById("difficultyDropdownLabel").hidden=false
     }
 
     drawSnake() {
