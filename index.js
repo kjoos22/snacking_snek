@@ -3,7 +3,12 @@ const playerList = document.getElementById("playerDropdown")
 const playerForm = document.getElementById("newPlayerForm")
 const gameplaySettings= document.getElementById("gameplaySettingsForm")
 const selectedDifficulty = document.getElementById("difficultyDropdown")
+const selectedPlayer = document.getElementById("playerDropdown")
 const newPlayerInput = document.getElementById("newPlayer")
+const hardScoreList = document.getElementById("hardScoreList")
+const mediumScoreList = document.getElementById("mediumScoreList")
+const playerScoreList = document.getElementById("playerScoreList")
+
 
 
 playerForm.addEventListener('submit', handlePlayerFormSubmit)
@@ -37,6 +42,7 @@ function handleStartGameFormSubmit(e){
     game.hideDropdowns()
 }
 
+GameApi.highScores()
 PlayerApi.allPlayers()
 game.drawSnake()
 game.makeFood()
