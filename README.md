@@ -44,6 +44,7 @@ Pull requests are welcome. To propose substantial changes please open an issue.
 2. High Scores refresh on game end
 3. Add sound
 4. Additional game modes (i.E bombs spawn as well as snek snacks, eating bomb results in game over).
+5. Improve snack spawning logic (snacks can currently spawn on top of snek)
 
 ## License
 https://github.com/kjoos22/snacking_snek/blob/main/LICENSE.txt
