@@ -33,6 +33,7 @@ class SnackingSnek {
         document.getElementById("startGameButton").hidden=true
         document.getElementById("playerDropdownLabel").hidden=true
         document.getElementById("difficultyDropdownLabel").hidden=true
+        //GameApi.highScores()
     }
 
     unhideDropdowns() {
@@ -180,6 +181,7 @@ class SnackingSnek {
             game.ctx.font = "bold 75px sans-serif"
             game.ctx.fillStyle = "#000000"
             game.ctx.fillText("GAME OVER", 210, 320)
+            
         }
     }
 

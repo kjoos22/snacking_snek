@@ -46,13 +46,18 @@
 }
 
 #newPlayerContainer {
+    display: flex;
     height: 48px;
     width: 900px;
     background-color: #000000;
 }
 
+#refreshHighScoresForm {
+    padding-top: 16px;
+    padding-left: 5px;
+}
 #newPlayerForm {
-    padding-left: 250px;
+    padding-left: 100px;
     padding-top: 16px;
     color: #ffffff;
 }
@@ -62,25 +67,25 @@
 }
 
 #hardScoreContainer {
-    height: 230px;
+    height: 235px;
     width: 225px;
     background-color: #000000;
 }
 
 #mediumScoreContainer {
-    height: 230px;
+    height: 235px;
     width: 225px;
     background-color: #000000;
 }
 
 #easyScoreContainer {
-    height: 230px;
+    height: 235px;
     width: 225px;
     background-color: #000000;
 }
 
 #playerScoreContainer {
-    height: 230px;
+    height: 235px;
     width: 225px;
     background-color: #000000;
 }

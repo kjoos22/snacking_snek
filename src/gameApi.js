@@ -26,6 +26,10 @@ class GameApi {
     }
 
     static highScores() {
+        hardScoreList.innerHTML = ""
+        mediumScoreList.innerHTML = ""
+        easyScoreList.innerHTML = ""
+        playerScoreList.innerHTML = ""
         let hardScores = []
         let mediumScores = []
         let easyScores = []

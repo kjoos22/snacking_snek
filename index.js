@@ -7,17 +7,25 @@ const selectedPlayer = document.getElementById("playerDropdown")
 const newPlayerInput = document.getElementById("newPlayer")
 const hardScoreList = document.getElementById("hardScoreList")
 const mediumScoreList = document.getElementById("mediumScoreList")
+const easyScoreList = document.getElementById("easyScoreList")
 const playerScoreList = document.getElementById("playerScoreList")
+const refreshScores = document.getElementById("refreshHighScoresForm")
 
 
 
 playerForm.addEventListener('submit', handlePlayerFormSubmit)
 gameplaySettings.addEventListener("submit", handleStartGameFormSubmit)
+refreshScores.addEventListener("submit", handleRefreshHighScoresFormSubmit)
 
 function handlePlayerFormSubmit(e){
     e.preventDefault()
     PlayerApi.createPlayer()
     playerForm.reset()
+}
+
+function handleRefreshHighScoresFormSubmit(e){
+    e.preventDefault()
+    GameApi.highScores()
 }
 
 function handleStartGameFormSubmit(e){
