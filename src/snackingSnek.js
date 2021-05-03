@@ -27,14 +27,14 @@ class SnackingSnek {
         document.addEventListener("keydown", this.changeDirection)
     }
 
-    disableDropdowns() {
-        document.getElementById("playerDropdown").disabled=true
-        document.getElementById("difficultyDropdown").disabled=true
+    hideDropdowns() {
+        document.getElementById("playerDropdown").hidden=true
+        document.getElementById("difficultyDropdown").hidden=true
     }
 
-    enableDropdowns() {
-        document.getElementById("playerDropdown").disabled=false
-        document.getElementById("difficultyDropdown").disabled=false
+    unhideDropdowns() {
+        document.getElementById("playerDropdown").hidden=false
+        document.getElementById("difficultyDropdown").hidden=false
     }
 
     drawSnake() {
@@ -166,7 +166,7 @@ class SnackingSnek {
         game.eatFood()
         if (game.gameOver()) {
             game.running = false
-            game.enableDropdowns()
+            game.unhideDropdowns()
             GameApi.createGame()
             clearInterval(game.gameplay)
             game.ctx.fillStyle = "#808080"

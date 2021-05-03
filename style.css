@@ -21,13 +21,13 @@
     color: #ffffff;
 }
 
-#playerContainer {
+#gameplaySettingsContainer {
     height: 48px;
-    width: 300px;
+    width: 600px;
     background-color: #000000;
 }
 
-#selectPlayerForm {
+#gameplaySettingsForm {
     padding-left: 5px;
     padding-top: 16px;
     color: #ffffff;
@@ -37,46 +37,39 @@
     width: 175px;
 }
 
-#difficultyContainer {
-    height: 48px;
-    width: 300px;
-    background-color: #000000;
-}
-
-#selectDifficultyForm {
-    padding-left: 5px;
-    padding-top: 16px;
-    color: #ffffff;
+#difficultyDropdownLabel {
+    padding-left: 80px;
 }
 
 #difficultyDropdown {
     width: 75px;
 }
 
+
 #highScoreContainer {
     display: flex
 }
 
 #hardScoreContainer {
-    height: 240px;
+    height: 220px;
     width: 225px;
     background-color: #000000;
 }
 
 #mediumScoreContainer {
-    height: 240px;
+    height: 220px;
     width: 225px;
     background-color: #000000;
 }
 
 #easyScoreContainer {
-    height: 240px;
+    height: 220px;
     width: 225px;
     background-color: #000000;
 }
 
 #playerScoreContainer {
-    height: 240px;
+    height: 220px;
     width: 225px;
     background-color: #000000;
 }

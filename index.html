@@ -12,21 +12,19 @@
     <div id="scoreContainer">
         <p id="scoreText">CURRENT SCORE: 0</p>
     </div>
-    <div id="playerContainer">
-        <form id="selectPlayerForm">
+    <div id="gameplaySettingsContainer">
+        <form id="gameplaySettingsForm">
             <label for="playerDropdown">PLAYER: </label>
             <select id="playerDropdown">
             </select>
-        </form>
-    </div>
-    <div id="difficultyContainer">
-        <form id="selectDifficultyForm">
-            <label for="difficultyDropdown">DIFFICULTY: </label>
+            <label for="difficultyDropdown" id="difficultyDropdownLabel">
+                DIFFICULTY: </label>
             <select id="difficultyDropdown">
                 <option value="Easy">Easy</option>
                 <option value="Medium">Medium</option>
                 <option value="Hard">Hard</option>
             </select>
+            <input type="submit" value="Start Game">
         </form>
     </div>
 </div>
@@ -35,9 +33,6 @@
     <label for="newPlayer">NEW PLAYER: </label>
     <input type = "text" id="newPlayer"></input>
     <input type="submit" value="Create Player">
-</form>
-<form id="startGameForm">
-    <input type="submit" value="Start Game">
 </form>
 <br>
 <div id="highScoreContainer">
