@@ -8,7 +8,7 @@ To install the program, run the following:
 ```bash
 git clone git@github.com:kjoos22/snacking_snek.git
 ```
-## Configurating database
+## Configuring database
 To configure the database, run the following:
 
 ```bash
