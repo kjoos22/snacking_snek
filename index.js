@@ -10,12 +10,33 @@ const mediumScoreList = document.getElementById("mediumScoreList")
 const easyScoreList = document.getElementById("easyScoreList")
 const playerScoreList = document.getElementById("playerScoreList")
 const refreshScores = document.getElementById("refreshHighScoresForm")
-
+const vPlayerButton = document.getElementById("vPlayers")
+const vPlayerList = document.getElementById("vPlayerList")
 
 
 playerForm.addEventListener('submit', handlePlayerFormSubmit)
 gameplaySettings.addEventListener("submit", handleStartGameFormSubmit)
 refreshScores.addEventListener("submit", handleRefreshHighScoresFormSubmit)
+vPlayerButton.addEventListener("click", handleVPlayerButtonClick)
+
+function handleVPlayerButtonClick(e){
+    // Player.all.forEach(player => {
+    //     if (player.name.charAt(0).toLowerCase() == 'v') {
+    //         element = document.createElement("li")
+    //         element.innerText = player.name 
+    //         vPlayerList.append(element)
+    //     }
+
+    // })
+    const vPlayers = Player.all.filter(player => (player.name.charAt(0).toLowerCase() == 'v')) 
+    vPlayers.forEach(player => {
+        element = document.createElement("li")
+        element.innerText = player.name 
+        vPlayerList.append(element)
+    })    
+    
+
+}
 
 function handlePlayerFormSubmit(e){
     e.preventDefault()
@@ -50,11 +71,17 @@ function handleStartGameFormSubmit(e){
     game.hideDropdowns()
 }
 
-GameApi.highScores()
-PlayerApi.allPlayers()
+
+
 game.drawSnake()
 game.makeFood()
 game.addListeners()
+document.addEventListener("DOMContentLoaded", () => {
+    PlayerApi.allPlayers()
+    GameApi.highScores()
+})
+
+
 
 
 

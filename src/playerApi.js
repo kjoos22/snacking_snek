@@ -11,6 +11,7 @@ class PlayerApi {
                 player.addToPlayerDropdown()
             })
         })
+        
     }
 
     static createPlayer() {
@@ -34,4 +35,5 @@ class PlayerApi {
         })
 
     }
+
 }

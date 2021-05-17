@@ -4,6 +4,7 @@ class Player {
     constructor ({id, name}) {
         this.id = id
         this.name = name
+        Player.all.push(this)
     }
 
     addToPlayerDropdown() {
@@ -12,4 +13,13 @@ class Player {
         option.innerText = this.name
         playerList.append(option)
     }
+
+    static findById(id) {
+        const player = Player.all.filter(player => (player.id == id))
+        return player[0]
+    }
+
+    static all = []
+
+    
 }

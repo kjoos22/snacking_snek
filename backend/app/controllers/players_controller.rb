@@ -12,6 +12,11 @@ class PlayersController < ApplicationController
             render json: {error: "Failed to save"}
         end 
     end
+
+    def show
+        player = Player.find(params[:id])
+        render json: PlayerSerializer.new(player)
+    end
     
     private
 

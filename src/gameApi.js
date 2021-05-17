@@ -38,54 +38,64 @@ class GameApi {
         .then(resp => resp.json())
         .then(json => {
             json["data"].forEach(g => {
-                if(g.attributes.difficulty == "Hard") {hardScores.push(g)}
-                if(g.attributes.difficulty == "Medium") {mediumScores.push(g)}
-                if(g.attributes.difficulty == "Easy") {easyScores.push(g)}
-                if(g.attributes.player_id.toString() == selectedPlayer.value) {
-                    playerScores.push(g)
-                }
+                const game = new Game({id: g.id, score: g.attributes.score, 
+                    difficulty: g.attributes.difficulty, 
+                    player_id: g.attributes.player_id,
+                    created_at: g.attributes.created_at}) 
+
+            game.player = Player.findById(game.player_id)
+            if(game.difficulty == "Hard") {hardScores.push(game)}
+            if(game.difficulty == "Medium") {mediumScores.push(game)}
+            if(game.difficulty == "Easy") {easyScores.push(game)}
+            if(game.player_id.toString() == selectedPlayer.value) {
+                playerScores.push(game)
+            }
+
             })
+            
             hardScores = hardScores.sort((a, b) => 
-                (a.attributes.score < b.attributes.score) ? 1 : -1)
+                (a.score < b.score) ? 1 : -1)
             hardScores.length = 10
             hardScores.forEach(s => {
                 let score = document.createElement("li")
                 score.innerText = 
-                `${s.attributes.score} - ${s.attributes.player}`
+                `${s.score} - ${s.player.name}`
                 score.style.color = "#ffffff"
                 hardScoreList.append(score)
             })
             mediumScores = mediumScores.sort((a, b) => 
-                (a.attributes.score < b.attributes.score) ? 1 : -1)
+                (a.score < b.score) ? 1 : -1)
             mediumScores.length = 10
             mediumScores.forEach(s => {
                 let score = document.createElement("li")
                 score.innerText = 
-                `${s.attributes.score} - ${s.attributes.player}`
+                `${s.score} - ${s.player.name}`
                 score.style.color = "#ffffff"
                 mediumScoreList.append(score)
             })
             easyScores = easyScores.sort((a, b) => 
-                (a.attributes.score < b.attributes.score) ? 1 : -1)
+                (a.score < b.score) ? 1 : -1)
            easyScores.length = 10
            easyScores.forEach(s => {
                 let score = document.createElement("li")
                 score.innerText = 
-                `${s.attributes.score} - ${s.attributes.player}`
+                `${s.score} - ${s.player.name}`
                 score.style.color = "#ffffff"
                 easyScoreList.append(score)
             })
             playerScores = playerScores.sort((a, b) => 
-                (a.attributes.score < b.attributes.score) ? 1 : -1)
+                (a.score < b.score) ? 1 : -1)
             playerScores.length = 10
             playerScores.forEach(s => {
                 let score = document.createElement("li")
                 score.innerText = 
-                `${s.attributes.score} - ${s.attributes.player} - ${s.attributes.difficulty}`
+                `${s.score} - ${s.player.name} - ${s.difficulty}`
                 score.style.color = "#ffffff"
                 playerScoreList.append(score)
-            })
+            })        
+        
         })
+        
     }
 
 }
